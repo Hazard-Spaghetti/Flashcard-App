@@ -4,7 +4,7 @@ require('dotenv').config();
 
 //connects to online DB
 mongoose
-  .connect(process.env.MONGODB_URI, { dbName: 'Flashcards' })
+  .connect(process.env.MONGODB_URI, { dbName: 'Flashcards', writeConcern: { w: 'majority' }})
   .then(console.log('connected to flashcards database'));
 // .catch((err) => console.log(err))); **** fix this *****
 
