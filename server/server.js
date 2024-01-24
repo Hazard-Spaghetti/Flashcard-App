@@ -37,8 +37,9 @@ app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught an unknown middlware error',
     status: 500,
-    message: { err: 'An error occured' },
+    message: { err: err },
   };
+  console.log(err);
   // Use default err mashed with changes from passed in err
   const errorObj = Object.assign(defaultErr, err);
   console.log(errorObj.log);
