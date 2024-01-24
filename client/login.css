@@ -1,0 +1,70 @@
+body {
+    /* display: flex; */
+    position: relative;
+    margin: 0;
+    background-color: #ebecee;
+    font-family: 'Proxima Nova', 'San Francisco', arial, sans-serif;
+    /* color: #1d1d1d; */
+  }
+
+.container {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 550px;
+    /* border: 2px solid #1d1d1d; */
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* border: 2px solid #1d1d1d; */
+    border-radius: 10px;
+    background-color: #01b0ef;
+    border-radius: 10px;
+    margin-top: 0px; /* Add margin at the top of the form */
+    margin-bottom: 30px;
+} 
+
+.welcome{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    align-self: center;
+    /* border: 2px solid #1d1d1d; */
+    border-radius: 10px;
+    padding: 20px 50px 20px 50px;
+    background-color: #2dc6f2;
+    color: white;
+}
+
+input{
+    background-color: #6ed0f4;
+    border: 1px solid #ebecee;
+    border-radius: 5px;
+    color: black
+}
+
+.loginpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+.loginbutton {
+    display: flex;
+    align-self: center;
+    background-color: #6ed0f4;
+    border-radius: 5px;
+    border: none;
+    color: #ebecee;
+  }

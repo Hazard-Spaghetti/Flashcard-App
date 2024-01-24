@@ -2,8 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Deck from '../Deck/Deck.jsx';
-
-import getDecks from '../../utils/requests.js';
+import {getDecks} from '../../utils/requests.js';
 
 // create component body
 const DeckContainer = () => {

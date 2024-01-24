@@ -245,8 +245,17 @@ a {
 
 .backAndNext {
   display: flex;
-  /* justify-content: space-around; */
+  justify-content: space-between;
   margin-top: 4rem;
+}
+
+.shuffle {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  justify-content: center;
 }
 
 .backButton {
