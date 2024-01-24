@@ -17,6 +17,8 @@ const DeckContainer = () => {
   // retreive decks from store
   const decks = useSelector((state) => state.decks.decks);
 
+  const [discoModeActive, setDiscoModeActive] = useState(false);
+
   // create functionality to map through backendResponse and have new mapped
 
   const renderedDecks = decks.map((deck, index) => (
@@ -42,7 +44,10 @@ const DeckContainer = () => {
       setNewDeck('');
     }
   };
-  let discoCounter;
+  // let nextAction = function (e) {
+  //   return setNewDeck(e.target.value);
+  // };
+  let classNameOrDisco = null;
 
   // const discoMode = () => {
   //   e.preventDefault();
@@ -50,6 +55,10 @@ const DeckContainer = () => {
   //   nextAction = classNameOrDisco;
   //   classNameOrDisco = temp;
   // };
+
+  const inputOnChange = discoModeActive
+    ? (e) => setNewDeck(e.target.value)
+    : classNameOrDisco;
 
   return (
     <div className='DeckContainer'>
@@ -65,7 +74,7 @@ const DeckContainer = () => {
             <input
               type='text'
               placeholder='Enter deck name'
-              // onChange={classNameOrDisco}
+              onChange={inputOnChange}
               // value='defaultValue'
               // onChange={(e) => setNewDeck(e.target.value)}
               // this event is causing disco mode FIX THIS
@@ -75,7 +84,9 @@ const DeckContainer = () => {
             <button type='submit'>Add</button>
           </form>
         </div>
-        {/* <button onClick={discoMode}>Disco mode</button> */}
+        <button onClick={() => setDiscoModeActive(!discoModeActive)}>
+          Disco mode
+        </button>
       </div>
       <section className='deckSection'>{renderedDecks}</section>
     </div>
