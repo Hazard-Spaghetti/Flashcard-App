@@ -9,6 +9,7 @@ const Deck = require('./model');
 //require controllers:
 const deckController = require('./DeckController');
 const cardController = require('./CardController');
+const userRouter = require('./routers/userRouter.js');
 
 // Parse JSON incoming
 app.use(express.json());
@@ -22,7 +23,7 @@ app.use(cors({ origin: '*' }));
 // app.get('/', function (req, res) {
 //   res.sendFile(path.resolve(__dirname, '../client/index.html'));
 // });
-
+app.use('/user', userRouter);
 //use controllers
 console.log('this is right before deck controller');
 app.use('/', deckController);

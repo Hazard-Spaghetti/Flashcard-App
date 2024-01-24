@@ -1,4 +1,4 @@
-const Deck = require('./model');
+const { Deck } = require('./model');
 const router = require('express').Router();
 
 //do we need this here? I think it is already in server.js (app.get)
@@ -6,7 +6,7 @@ const router = require('express').Router();
 // GET '/'
 
 router.get('/', async (req, res, next) => {
-  console.log('sucessful get');
+  console.log('successful get');
 
   const getDecks = await Deck.find();
   return res.status(200).json(getDecks);
@@ -17,10 +17,6 @@ router.get('/', async (req, res, next) => {
 //deck info will be sent in req body
 //send created deck in routers in server.js
 router.post('/', (req, res, next) => {
-  const { deckName, cards } = req.body;
-  console.log('deck:', deckName);
-  console.log('cards', cards);
-  console.log('is this working?');
   Deck.create(req.body) //
     .then((data) => {
       res.locals.newDeck = data;

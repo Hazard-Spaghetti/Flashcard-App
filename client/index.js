@@ -8,6 +8,7 @@ import LoginPage from './components/Login/Login.jsx';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
+//if (session is active){
 root.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -16,6 +17,7 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
+// <<<<<<< frontend
 
 
 // function hasAccount(props) {
@@ -29,3 +31,15 @@ root.render(
 // const root = ReactDOM.createRoot(document.getElementById('root')); 
 
 // root.render(<Provider store={store}><BrowserRouter><hasAccount isLoggedIn={false} /> </BrowserRouter> </Provider>);
+// =======
+//}
+//else if (session is not active){
+// root.render(
+//   <Provider store={store}>
+//     <BrowserRouter>
+//       <Login />
+//     </BrowserRouter>
+//   </Provider>
+// );
+//}
+// >>>>>>> dev
