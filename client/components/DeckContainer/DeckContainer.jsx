@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Deck from '../Deck/Deck.jsx';
-import {getDecks} from '../../utils/requests.js';
+import { getDecks } from '../../utils/requests.js';
 
 // create component body
 const DeckContainer = () => {
@@ -18,6 +18,7 @@ const DeckContainer = () => {
   const decks = useSelector((state) => state.decks.decks);
 
   // create functionality to map through backendResponse and have new mapped
+
   const renderedDecks = decks.map((deck, index) => (
     <Deck key={deck._id} deck={deck} index={index} />
   ));
@@ -25,8 +26,10 @@ const DeckContainer = () => {
   // create function to handle new deck form submissions
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('logging e: ', e.target[0].value);
+    setNewDeck(e.target[0].value);
 
-    const body = JSON.stringify({ deckName: newDeck, cards: [] });
+    const body = JSON.stringify({ deckName: e.target[0].value, cards: [] });
 
     const response = await fetch('http://localhost:3000', {
       method: 'POST',
@@ -39,6 +42,14 @@ const DeckContainer = () => {
       setNewDeck('');
     }
   };
+  let discoCounter;
+
+  // const discoMode = () => {
+  //   e.preventDefault();
+  //   const temp = nextAction;
+  //   nextAction = classNameOrDisco;
+  //   classNameOrDisco = temp;
+  // };
 
   return (
     <div className='DeckContainer'>
@@ -50,19 +61,21 @@ const DeckContainer = () => {
         <div className='addNewDeck'>
           <h3>Flashcards</h3>
           <h4>Add a new deck below</h4>
-          <form onSubmit={handleSubmit}> 
+          <form onSubmit={handleSubmit}>
             <input
               type='text'
               placeholder='Enter deck name'
-              value={newDeck}
-              onChange={(e) => setNewDeck(e.target.value)}
+              // onChange={classNameOrDisco}
+              // value='defaultValue'
+              // onChange={(e) => setNewDeck(e.target.value)}
               // this event is causing disco mode FIX THIS
               // this should probably be onSUBMIT
               // prevent default?
             ></input>
-            <button type='submit'>Add</button> 
+            <button type='submit'>Add</button>
           </form>
         </div>
+        {/* <button onClick={discoMode}>Disco mode</button> */}
       </div>
       <section className='deckSection'>{renderedDecks}</section>
     </div>
