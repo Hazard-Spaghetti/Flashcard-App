@@ -1,9 +1,6 @@
 const request = require('supertest');
-const fs = require('fs');
-const path = require('path');
 const server = 'http://localhost:3000';
-const DeckController = require('../../server/DeckController.js');
-const Deck = require('../../server/model');
+const { Deck } = require('../../server/model');
 
 describe('DeckController routes', () => {
   describe('/', () => {
@@ -45,7 +42,7 @@ describe('DeckController routes', () => {
       });
       it('adds deck to db', async () => {
         const decks = await Deck.find({ deckName: 'test98765' });
-        expect(decks).not.toBe(undefined);
+        expect(decks).not.toBe(null);
       });
     });
     describe('DELETE', () => {

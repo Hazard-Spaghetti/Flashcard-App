@@ -1,4 +1,4 @@
-const Deck = require('./model');
+const { Deck } = require('./model');
 const router = require('express').Router();
 
 //do we need this here? I think it is already in server.js (app.get)

@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
+//if (session is active){
 root.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -14,3 +15,13 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
+//}
+//else if (session is not active){
+// root.render(
+//   <Provider store={store}>
+//     <BrowserRouter>
+//       <Login />
+//     </BrowserRouter>
+//   </Provider>
+// );
+//}
