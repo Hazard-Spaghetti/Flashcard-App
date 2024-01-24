@@ -29,16 +29,17 @@ const Deck = ({ deck, index }) => {
     '#93D5F3',
     '#29BDB6',
   ];
-// disco mode is happening do to updating the state
+  // disco mode is happening do to updating the state
   // try using prevent default to fix this
 
-
-  //randomly select a color for the decks
   const styles = {
     backgroundColor:
       colorsArray[Math.floor(Math.random() * colorsArray.length + 1) - 1],
   };
-// renders the existing decks to the page
+
+  //randomly select a color for the decks
+
+  // renders the existing decks to the page
   return (
     <div id={`deck${index}`} className='Deck'>
       {/* DISCO MODE potentially here as well */}

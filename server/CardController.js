@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const Deck = require('./model');
-
+const { Deck } = require('./model');
 
 //>>>>THE FOLLOWING CODE IS UNNECESSARY AS OF 1/23 11:11<<<<
 //>>>>          VIEWER DISCRETION IS ADVISED            <<<<
@@ -32,6 +31,7 @@ router.post('/:deckId/card', async (req, res, next) => {
   try {
     //assign params.deckId to a variable for readability
     const deckId = req.params.deckId;
+    console.log('deckid: ', deckId);
     //retrieve deck and assign it to variable
     const deck = await Deck.findById(deckId);
     //check if no deck was found

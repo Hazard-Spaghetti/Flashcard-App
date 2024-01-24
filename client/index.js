@@ -12,13 +12,12 @@ const root = ReactDOM.createRoot(container);
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      {/* <App /> */}
-      <LoginPage />
+      <App />
+      {/*<LoginPage />*/}
     </BrowserRouter>
   </Provider>
 );
 // <<<<<<< frontend
-
 
 // function hasAccount(props) {
 //   const isLoggedIn = props.isLoggedIn;
@@ -28,7 +27,7 @@ root.render(
 //   return <LoginPage />;
 // }
 
-// const root = ReactDOM.createRoot(document.getElementById('root')); 
+// const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // root.render(<Provider store={store}><BrowserRouter><hasAccount isLoggedIn={false} /> </BrowserRouter> </Provider>);
 // =======
