@@ -44,7 +44,7 @@ const LoginPage = () => {
                 <label for="password">Password:</label><br/>
                 <input type="text" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br/>
 
-                <input className="loginbutton" type="submit"/> 
+                <input className="loginbutton" type="submit" /> 
                 {/* when submit data === true, render <App /> 
                 else "error: please enter correct username and password*/}
             </form>
